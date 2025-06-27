@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background-size: cover;
+    text-decoration-line: none;
+    scroll-behavior: smooth;
+}
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all .50s ease;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+header{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 3;
+}
+header div{
+    display: flex;
+    margin-left: auto;
+    padding-right:2% ;
+    transition: transform 1s ease-in-out;
+}
+header div ul{
+    display: flex;
+    list-style-type: none;
+}
+header div ul li a{
+    margin-left: 35px;
+    color: black;
+    font-size: large;
+    cursor: pointer;
+}
+header div ul li a:hover{
+    color: yellowgreen;
+} 
+.menuimg{
+    width: 20px;
+}
+#locationSec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow: hidden;
+    transform: translateX(-100%);
+    z-index: 13;
+}
+#slider{
+    align-self: flex-start;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    padding: 5% 1%;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out;
+}
+.headings{
+    justify-self: flex-start;
+    width: 75%;
+}
+.heading{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 5vw;
+    margin: 0;
+}
+.redHeading{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+.intro{
+    margin-top: 0;
+    width: 50%;
+    justify-self: flex-end;
+}
+.intro p {
+    font-size: large;
+    font-family: fantasy;
+}
+.intro button{
+    background-color: transparent;
+    border: 2px solid black;
+    width: 30%;
+    height: 40px;
+    cursor: pointer;
+}
+#learn{
+    background-color: maroon;
+    border: white;
+    color: white;
+}
+.menu{
+    cursor: pointer;
+}
+#landingPage{
+    display: flex;
+    position: absolute;
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(images/wings.jpg);
+    background-size: cover;
+    filter: brightness(45%);
+    transition: transform 1s ease-in-out;
+}
+#learnMore{
+    position: absolute;
+    align-self: center;
+    left: 0;
+    z-index: 5;
+    width: 50%;
+    margin-left: 2%;
+    background-color: rgba(23,23,23,0.8);
+    padding: 2%;
+    visibility: hidden;
+    transition: transform 1s ease-in-out;
+}
+#learnMore p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    color: gold;
+    font-weight: 800;
+}
+#secondPage{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#menuPage{
+    height: 85vh;
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+#addFoodBtn{
+    margin-left: auto;
+    margin-right: 2%;
+    background-color: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.productDetails{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    width: 300px;
+    height: 370px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.productPic{
+    display: flex;
+    background-color:beige;
+    width:100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background-image: url(images/plate.jpg);
+    background-size: cover;
+    transition: all .50s ease;
+}
+.promo{
+    transition: all .50s ease;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    translate: 0% 100%;
+    background-color: white;
+    align-self: flex-end;
+}
+.productDetails:hover .promo{
+    translate: 0%;
+}
+.productDesc{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid black;
+    margin: 0 15px;
+    visibility: hidden;
+}
+.productDetails:hover .cart{
+    transition: all .50s ease;
+    visibility: visible;
+    scale: 1.1;
+}
+.pin{
+    width: 25px;
+    height: 25px;
+    visibility: visible;
+    position: absolute;
+    right: 0;
+    margin: 12px;
+    visibility: hidden;
+}
+.productDetails:hover .pin{
+    transition: all .50s ease;
+    visibility: visible;
+    scale: 1.1;
+}
+p{
+    margin: 8px 0;
+}
+#productModal{
+    position: absolute;
+    display: flex;
+    width: 950px;
+    height: 600px;
+    background-color: antiquewhite;
+    z-index: 11;
+    flex-direction: row;
+    visibility: hidden;
+    box-shadow: 0 2px 24px rgba(23,23,23,0.6);
+    overflow: hidden;
+    border-radius: 20px;
+}
+.modalDivision1, .modalDivision2{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+.modalDivision2{
+    background-color: white;
+    padding: 20px;
+}
+#modalPicture{
+    background-image: url(images/plate.jpg);
+    align-self:center;
+    margin-top: auto;
+    border-radius: 15px;
+    width: 96%;
+    height: 76%;
+}
+#pictureSlider{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    margin-top: auto;
+}
+#productName{
+    position: relative;
+    height: 20%;
+}
+#productDescription{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 80%;
+}
+#desprice{
+    display: flex;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+    margin-top: auto;
+}
+#addToCart{
+    margin-left: auto;
+    border: 1px solid black;
+    width: 9%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    border-radius: 100%;
+}
+#addToCart img{
+    width: 25px;
+}
+#addToCart:hover{
+    box-shadow: 0 2px 24px rgba(23,23,23,0.6);
+}
+#closeModal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: red;
+    cursor: pointer;
+}
+.formDiv{
+    display: flex;
+    position: absolute;
+    height: 600px;
+    width: 950px;
+    background-color:bisque;
+    border: 1px solid black;
+    box-shadow: 0 2px 24px rgba(23,23,23,0.6);
+    visibility: hidden;
+}
+.productForm{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.vendor, .food, .image{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 33%;
+    height: 100%;
+    padding: 1%;
+    gap: 1%;
+}
+.imgPreview{
+    width: 100%;
+    border: 1px solid black;
+    height: 45%;
+    background-size: cover;
+}
+input, textarea{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    outline: none;
+    height: 100%;
+}
+#submit{
+    margin-top: auto;
+    height: 5%;
+    width: 60%;
+    margin-left: auto;
+}
+fieldset:hover{
+    box-shadow: 0 2px 24px rgba(23,23,23,0.6);
+}
+.closeForm{
+    position:absolute;
+    display: flex;
+    right: 0;
+    background-color: red;
+    height: 25px;
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

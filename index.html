@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <div id="headerDiv">
+            <ul>
+                <li><a class="home2">Home</a></li>
+                <li><a class="menuPage2">About</a></li>
+                <li><a class="menu">Menu</a></li>
+                <li><a class="menuCart"><span><img src="images/bag.svg" alt="" srcset=""></span></a></li>
+                <li><a class="menuCheckOut"><span><img src="images/cart-check.svg" alt=""></span></a></li>
+            </ul>
+        </div>
+    </header>
+    <section id="logIn">
+        <div class="logInDiv">
+            <div class="logInToggleDiv">
+                <div id="logInToggle">
+                    <div class="signUpToggle">SignUp</div>
+                    <div class="signInToggle">SignIn</div>
+                </div>
+            </div>
+            <div class="logInPicDiv">
+                <div class="logInPic"></div>
+                <h1>Welcome!</h1>
+            </div>
+            <div class="logInForm">
+                <form action="" name="logIn" id="logInForm">
+                    <label for="name">UserName:</label>
+                    <input type="text" class="logInInputs" name="userName">
+                    <label for="password">Password:</label>
+                    <input type="password" class="logInInputs" name="password" id="password">
+                    <button type="submit" class="logInButtons">LogIn</button>
+                </form>
+            </div>
+        </div>
+        <div class="signUpDiv" >
+            <div class="signUpForm">
+                <form action="" name="signUp" id="signUpForm">
+                    <label for="name">UserName:</label>
+                    <input type="text" class="logInInputs" name="userName">
+                    <label for="phone">Phone Number:</label>
+                    <input type="phone" class="logInInputs" name="phoneNumber">
+                    <label for="email">Email Address:</label>
+                    <input type="email" class="logInInputs" name="email">
+                    <label for="password">Password:</label>
+                    <input type="password" class="logInInputs" name="password" id="signUpPassword">
+                    <button type="submit" class="logInButtons">SignUp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="locationSec">
+        <div id="slider">
+            <div class="headings">
+                <h1 class="heading">Craving? Order Anytime,  <br> No <span class="redHeading">Internet</span> Needed!</h1>
+                <div class="intro">
+                    <p>Cravings don’t wait for a stable internet connection, and neither should you. With our offline food ordering web app, you can satisfy your hunger anytime, anywhere — no internet required. Because great food should always be just a tap away, no matter where you are.</p>
+                    <button id="learn">Learn more</button>
+                    <button class="menu">See Menu</button>
+                </div>
+            </div>
+        </div>
+        <div id="landingPage">
+            <div id="learnMore">
+                <p>Cravings don’t wait for a stable internet connection, and neither should you. With our offline food ordering web app, you can satisfy your hunger anytime, anywhere — no internet required. Whether you're commuting, in a remote area, or facing connectivity issues, our app lets you browse menus, customize your orders, and place them seamlessly without interruption. Thanks to Progressive Web App technology, the app caches essential data and stores your orders locally, ensuring a smooth and reliable experience even when offline. Once you're back online, your orders sync automatically, so you never miss a bite. Because great food should always be just a tap away, no matter where you are or what your connection looks like.</p>
+        </div>
+        </div>
+    </section>
+    <div id="secondPage">
+        <button id="addFoodBtn">Add Food</button>
+        <div id="menuPage">
+            <div id="productDetails" class="productDetails">
+                <div id="productPic" class="productPic">
+                    <div id="promo" class="promo">
+                        <span>PRODUCT UNDER PROMO</span>
+                    </div>
+                    <img id="pin" class="pin" src="images/pin-angle.svg">
+                </div>
+                <div id="productDesc" class="productDesc">
+                    <div>
+                        <p>CHICKEN PASTA</p>
+                        <span>ksh 500</span>
+                    </div>
+                    <div id="cart" class="cart"><img src="images/bag.svg"></div>
+                </div>
+            </div>
+        </div>
+        <div id="productModal">
+            <div class="modalDivision1">
+                <div id="modalPicture"></div>
+                <div id="pictureSlider">slider coming soon</div>
+            </div>
+            <div class="modalDivision2">
+                <div id="productName">
+                    <div id="closeModal">X</div>
+                    <h2 id="modalHeading"></h2>
+                    <span>
+                        <img src="images/star-fill.svg" alt="" srcset="">
+                        <img src="images/star-fill.svg" alt="" srcset="">
+                        <img src="images/star-fill.svg" alt="" srcset="">
+                        <img src="images/star-fill.svg" alt="" srcset="">
+                        <img src="images/star.svg" alt="" srcset="">
+                    </span>
+                    <hr>
+                </div>
+                <div id="productDescription">
+                    <p>Cuisine: <span id="modalCuisine"></span></p>
+                    <p>Availability: On order</p>
+                    <p>Ingredients: <span id="modalIngredients"></span></p>
+                    <p>Dietary Information: <span id="modalFoodInfo"></span></p>
+                    <div id="desprice">
+                        KES: <span id="modalFoodPrice"> </span>
+                        <span id="addToCart"><img src="images/bag.svg" alt=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formDiv" id="formDiv">
+            <form action="" name="productForm" class="productForm">
+                <div class="vendor">
+                    <span>Vendor details <hr></span>
+                    <fieldset>
+                        <legend>Vendor Name</legend>
+                        <input type="text" name="vendorName" placeholder="Your name">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Vendor's Contact</legend>
+                        <input type="text" name="vendorContact" placeholder="Your contact">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Shop Name</legend>
+                        <input type="text" name="shopName" placeholder="shop Name">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Shop Location</legend>
+                        <input type="text" name="shopLocation" placeholder="shop location">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Additionals</legend>
+                        <textarea type="text" name="additionals" rows="15" cols="30" placeholder="input import details that will help win more customers like hygine certifications"></textarea>
+                    </fieldset>
+                </div>
+                <div class="food">
+                    <span>Food type <hr></span>
+                    <fieldset>
+                        <legend>Food Name</legend>
+                        <input type="text" name="foodName" placeholder="food name">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Food Cuisine</legend>
+                        <input type="text" name="foodCuisine" placeholder="food originality">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Food Ingredient</legend>
+                        <input type="text" name="mainIngridient" placeholder="main Ingredient">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Food Price</legend>
+                        <input type="text" name="foodPrice" placeholder="price">
+                    </fieldset>
+                    <fieldset>
+                        <legend>food notes</legend>
+                        <textarea type="text" name="foodNotes" rows="15" cols="30" placeholder="food notes are important things to note about the type of food and its contents to alert allergic and sensitive people"></textarea>
+                    </fieldset>
+                </div>
+                <div class="image">
+                    <span>Food image <hr></span>
+                    <div class="imgPreview"></div>
+                    <fieldset>
+                        <legend>Food Image</legend>
+                        <input type="text" name="foodImg" placeholder="Image in url link" id="imageUrl">
+                    </fieldset>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+            </form>
+            <div class="closeForm">X</div>
+        </div>
+        <div class="cartDiv" id="cartDiv">
+                <div class="cartProduct">
+                    <h2>Shopping Cart <hr> </h2>
+                </div>
+                <div class="cartSummary">
+                    <div class="summary">
+                        <h2>Summary <hr></h2>
+                        <div class="summaryItems">
+                            <p>Items: <span class="itemCount">3</span></p>
+                            <p id="totalProductPrice">Ksh: 0</p>
+                        </div>
+                        <div>
+                            <h3>Shipping</h3>
+                            <select name="shipping" id="shipping">
+                                <option value="0">In Nairobi - Kes: 0</option>
+                                <option value="500">Around Nairobi - Kes 500</option>
+                            </select>
+                        </div>
+                        <div class="priceDiv">
+                            <h3>Total Price</h3>
+                            <h4>Ksh: <span id="totalPrice">0</span></h4>
+                        </div>
+                        <button id="checkOutBtn">CHECKOUT</button>
+                    </div>
+                    <div class="closeCart">X</div>
+                </div>
+        </div>
+        <div class="checkOutDiv" id="checkOutDiv">
+            <div class="rider">
+                <h2>Rider Assigned</h2>
+                <hr style="width: 100%;"> 
+                <section>
+                    <div class="riderImage"></div>
+                    <div class="riderDetails">
+                        <div><h2 class="riderName">Name:</h2> <span>Joshua Kamau</span></div>
+                        <div><h2 class="riderNumber">No:</h2> <span>0724 564 486</span></div>
+                        <div><h2 class="numberPlate">Plate:</h2> <span>KMFG 845K</span></div>
+                    </div>
+                </section>
+                <hr style="width: 100%;">
+                <input type="text" class="location" placeholder="Input delivery location">
+                <fieldset>
+                    <legend>Additional Info</legend>
+                    <textarea name="ridersNote" id="ridersNote" cols="45" rows="10" placeholder="Input note to the rider"></textarea>
+                </fieldset>
+            </div>
+            <div class="checkOut">
+                <div id="closeCheckOut">X</div>
+                <h2>Check Out</h2>
+                <hr style="width: 100%;"> 
+                <div class="listDiv">
+                    <ol class="checkOutList">
+                    </ol>
+                    <div class="riderChargeDiv">
+                        <span class="riderCharge">Rider</span><span class="ridePrice">Pay rider</span>
+                    </div>
+                    <hr style="width: 100%;"> 
+                    <div class="totalCheckOut">
+                    <h3 class="checkItem">Total</h3><h3 class="totalCheckPrice"></h3>
+                    </div>
+                </div>
+                <div class="till">
+                    <h2>M-PESA TILL NUMBER</h2>
+                    <h1>DS6584H</h1>
+                </div>
+                <input type="text" name="transaction" class="transactionCode" placeholder="Paste transaction code here">
+                <button class="returnToCart">Return to Cart</button>
+                <button class="checkOutBtn">Check Out</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

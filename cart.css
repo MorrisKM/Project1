@@ -1,0 +1,485 @@
+#logIn{
+    display: flex;
+    position: absolute;
+    z-index: 15;
+    height: 550px;
+    width: 400px;
+    background-color: #232323;
+    overflow: hidden;
+    box-shadow: 0 2px 24px black;
+    border: none;
+    visibility: hidden;
+    align-self: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.logInToggleDiv{
+    width: 400px;
+    height: 60px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+}
+#logInToggle{
+    width: 40%;
+    background-color: aqua;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+}
+#addFoodBtn{
+    width: 150px;
+    height: 30px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    visibility: hidden;
+}
+.signInToggle, .signUpToggle{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: white;
+}
+.signInToggle{
+    transform: translateX(100%);
+    background-color: aquamarine;
+    color: black;
+}
+.signUpToggle{
+    background-color: #232323;
+}
+.logInDiv{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signUpDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    transform: translateX(100%);
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.signUpForm{
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.logInPicDiv{
+    margin: 15% 0 0 0;
+    height: 35%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logInPic{
+    height: 70%;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background-color: antiquewhite;
+}
+.logInForm{
+    width: 70%;
+    display: flex;
+}
+.logInInputs{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+    margin: 0 0 5% 0;
+}
+.logInInputs:hover {
+    box-shadow: 0 1px 5px white;
+}
+.logInButtons {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    margin-top: auto;
+}
+.cartDiv{
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    border-radius: 20px;
+    height: 600px;
+    width: 950px;
+    overflow: hidden;
+    visibility: hidden;
+    background-color:bisque;
+    box-shadow: 0 2px 24px rgba(23,23,23,0.6);
+}
+.cartProduct{
+    width: 65%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+.cartSummary{
+    position: relative;
+    width: 35%;
+}
+.oneItem{
+    display: flex;
+    margin-top: 1%;
+    height: 18%;
+    width: 96%;
+    border-bottom: 1px solid gray;
+}
+.cartProduct section div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+.cartProductImg{
+    background-size: cover;
+    aspect-ratio: 1 / 1 ;
+}
+.cartProductName{
+    flex-direction: column;
+    margin-left: 2%;
+}
+.cartProductPieces{
+    flex-direction: row;
+    align-items: center;
+}
+.cartProductPieces button {
+    width: 20%;
+    margin: 6%;
+    height: 20%;
+    border: 1px solid gray;
+}
+.cartProductPrice{
+    align-items: center;
+}
+.cartDeleter{
+    align-items: center;
+    margin-left: auto;
+}
+.summary{
+    margin: 4%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.summaryItems{
+    display: flex;
+}
+select{
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    outline: none;
+    text-align: center;
+}
+#totalProductPrice{
+    margin-left: auto;
+}
+.priceDiv{
+    display: flex;
+    align-items: center;
+}
+.priceDiv h4{
+    margin-left: auto;
+}
+#checkOutBtn{
+    width: 100%;
+    height: 30px;
+    background-color: maroon;
+    border: none;
+    color: white;
+    margin-top: auto;
+    border-radius: 5px;
+}
+.closeCart{
+    position:absolute;
+    display: flex;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 100%;
+    font-size:larger;
+    height: 25px;
+    width: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkOutDiv{
+    display: flex;
+    position: absolute;
+    z-index: 11;
+    border-radius: 20px;
+    height: 600px;
+    width: 950px;
+    visibility: hidden;
+    overflow: hidden;
+    background-color:bisque;#logIn{
+    display: flex;
+    position: absolute;
+    z-index: 15;
+    height: 550px;
+    width: 400px;
+    background-color: #232323;
+    overflow: hidden;
+    box-shadow: 0 2px 24px black;
+    border: none;
+}
+.logInToggleDiv{
+    width: 400px;
+    height: 60px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+}
+#logInToggle{
+    width: 40%;
+    background-color: aqua;
+    height: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+}
+.signInToggle, .signUpToggle{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: white;
+}
+.signInToggle{
+    transform: translateX(100%);
+    background-color: aquamarine;
+    color: black;
+}
+.signUpToggle{
+    background-color: #232323;
+}
+.logInDiv{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signUpDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    transform: translateX(100%);
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.signUpForm{
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.logInPicDiv{
+    margin: 15% 0 0 0;
+    height: 35%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logInPic{
+    height: 70%;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background-color: antiquewhite;
+}
+.logInForm{
+    width: 70%;
+    display: flex;
+}
+.logInInputs{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+    margin: 0 0 5% 0;
+}
+.logInInputs:hover {
+    box-shadow: 0 1px 5px white;
+}
+.logInButtons {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    margin-top: auto;
+}
+    box-shadow: 0 2px 24px rgba(23,23,23,0.6);
+}
+.rider{
+    width: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+.riderChargeDiv{
+    display: flex;
+    width: 100%;
+    align-self: center;
+}
+.ridePrice{
+    margin-left: auto;
+}
+.checkOut{
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section{
+    display: flex;
+    width: 100%;
+    height: 30%;
+}
+.riderImage{
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    margin:0 2%;
+    background-image: url(images/leclerc\ \(1\).jpeg);
+    background-size: cover;
+}
+.checkOutBtn{
+    width: 85%;
+    height: 5%;
+    margin-top: auto;
+    margin-bottom: 3%;
+    background-color: maroon;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.returnToCart{
+    width: 30%;
+    background-color: maroon;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 5%;
+}
+.riderDetails{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.riderDetails div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+.riderDetails div h2{
+    margin: 10px;
+}
+.listDiv{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.listDiv h3{
+    margin-top: 0;
+}
+.totalCheckOut, .listDiv li div{
+    display: flex;
+    width: 100%;
+}
+.checkPrice{
+    margin-left: auto;
+}
+.riderDetails div span{
+    font-size: large;
+}
+.location, .transactionCode{
+    width: 85%;
+    margin: 6% 0;
+    height: 5%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+.till{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.til h2, h1{
+    margin: 0;
+}
+textarea{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+#closeCheckOut{
+    position:absolute;
+    display: flex;
+    right: 5px;
+    top: 5px;
+    background-color: red;
+    border-radius: 100%;
+    font-size:larger;
+    color: white;
+    height: 25px;
+    width: 25px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
