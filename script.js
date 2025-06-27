@@ -35,7 +35,8 @@ let checkOutDiv = document.getElementById('checkOutDiv')
 let home2 = document.querySelector('.home2');
 let menu = document.querySelectorAll('.menu');
 
-let usersdb = 'http://localhost:3000/people'
+let usersdb = 'http://localhost:3000/people';
+let listingsbd = 'http://localhost:3000/listings';
 
 // Show login modal and blur menu page on page load, disable pointer events for key UI
 window.addEventListener('DOMContentLoaded', () => {
@@ -197,7 +198,7 @@ let modalCart = document.getElementById('addToCart');
 
 // Render menu products from backend
 async function menuP () {
-    let db = await fetch('http://localhost:3000/listings');
+    let db = await fetch(listingsbd);
     let data = await db.json();
 
     for(let x of data) {
@@ -249,7 +250,7 @@ async function menuP () {
         // Add to cart handler
         productCart.addEventListener('click', async () => {
         let carted = {cart : true};
-        let updated =await fetch(`http://localhost:3000/listings/${x.id}`,{
+        let updated =await fetch(`${listingsbd}/${x.id}`,{
             method: 'PATCH',
             body: JSON.stringify(carted)
         })
@@ -264,7 +265,7 @@ async function menuP () {
         modalCart.addEventListener('click', async () => {
             if (!currentProduct) return;
             let carted = { cart: true };
-            let updated = await fetch(`http://localhost:3000/listings/${currentProduct.id}`, {
+            let updated = await fetch(`${listingsbd}/${currentProduct.id}`, {
                 method: 'PATCH',
                 body: JSON.stringify(carted),
                 headers: {'Content-Type': 'application/json'} 
@@ -300,7 +301,7 @@ form.addEventListener('submit', async (e) => {
     let obj = Object.fromEntries(formData.entries());
 
     try{
-    let db = await fetch('http://localhost:3000/listings', {
+    let db = await fetch(listingsbd, {
         method : 'POST',
         body : JSON.stringify(obj)
     })
@@ -339,7 +340,7 @@ function updateCartTotal() {
 
 // Render cart items
 async function cartRender () {
-    let db = await fetch('http://localhost:3000/listings');
+    let db = await fetch(listingsbd);
     let data = await db.json();
 
     let carted = data.filter(obj => obj.cart === true)
@@ -432,7 +433,7 @@ async function cartRender () {
         cartDeleterP.addEventListener('click', async () => {
             carted.splice(i, 1);
             oneItem.remove();
-            await fetch(`http://localhost:3000/listings/${x.id}`, {
+            await fetch(`${listingsbd}/${x.id}`, {
                 method: 'PATCH',
                 body: JSON.stringify({cart : false})
             })
