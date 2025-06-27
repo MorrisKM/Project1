@@ -245,8 +245,12 @@ select{
     position: absolute;
     z-index: 11;
     border-radius: 20px;
-    height: 600px;
-    width: 950px;
+    min-height: 450px;
+    height: 60%;
+    max-height: 650px;
+    max-width: 950px;
+    width: 65%;
+    min-width: 700px;
     visibility: hidden;
     overflow: hidden;
     background-color:bisque;#logIn{
