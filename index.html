@@ -21,6 +21,7 @@
     </header>
     <section id="logIn">
         <div class="logInDiv">
+            <!-- Toggle between SignUp and SignIn forms -->
             <div class="logInToggleDiv">
                 <div id="logInToggle">
                     <div class="signUpToggle">SignUp</div>
@@ -31,6 +32,7 @@
                 <div class="logInPic"></div>
                 <h1>Welcome!</h1>
             </div>
+            <!-- Log In Form -->
             <div class="logInForm">
                 <form action="" name="logIn" id="logInForm">
                     <label for="name">UserName:</label>
@@ -41,6 +43,7 @@
                 </form>
             </div>
         </div>
+        <!-- Sign Up Form (hidden/toggled into view) -->
         <div class="signUpDiv" >
             <div class="signUpForm">
                 <form action="" name="signUp" id="signUpForm">
@@ -57,6 +60,7 @@
             </div>
         </div>
     </section>
+    <!-- landing page -->
     <section id="locationSec">
         <div id="slider">
             <div class="headings">
@@ -68,6 +72,7 @@
                 </div>
             </div>
         </div>
+        <!-- Learn more details, hidden until triggered -->
         <div id="landingPage">
             <div id="learnMore">
                 <p>Cravings don’t wait for a stable internet connection, and neither should you. With our offline food ordering web app, you can satisfy your hunger anytime, anywhere — no internet required. Whether you're commuting, in a remote area, or facing connectivity issues, our app lets you browse menus, customize your orders, and place them seamlessly without interruption. Thanks to Progressive Web App technology, the app caches essential data and stores your orders locally, ensuring a smooth and reliable experience even when offline. Once you're back online, your orders sync automatically, so you never miss a bite. Because great food should always be just a tap away, no matter where you are or what your connection looks like.</p>
@@ -75,8 +80,11 @@
         </div>
     </section>
     <div id="secondPage">
+        <!-- Admin button to add new food (visible to admin only) -->
         <button id="addFoodBtn">Add Food</button>
+        <!-- Menu listing container -->
         <div id="menuPage">
+            <!-- Example product card (will be dynamically generated) -->
             <div id="productDetails" class="productDetails">
                 <div id="productPic" class="productPic">
                     <div id="promo" class="promo">
@@ -93,6 +101,7 @@
                 </div>
             </div>
         </div>
+        <!-- Product modal when the product picture is clicked -->
         <div id="productModal">
             <div class="modalDivision1">
                 <div id="modalPicture"></div>
@@ -123,6 +132,7 @@
                 </div>
             </div>
         </div>
+        <!-- add food form modal -->
         <div class="formDiv" id="formDiv">
             <form action="" name="productForm" class="productForm">
                 <div class="vendor">
@@ -183,6 +193,7 @@
             </form>
             <div class="closeForm">X</div>
         </div>
+        <!-- cart modal -->
         <div class="cartDiv" id="cartDiv">
                 <div class="cartProduct">
                     <h2>Shopping Cart <hr> </h2>
@@ -210,6 +221,7 @@
                     <div class="closeCart">X</div>
                 </div>
         </div>
+        <!-- checkOut modal -->
         <div class="checkOutDiv" id="checkOutDiv">
             <div class="rider">
                 <h2>Rider Assigned</h2>
