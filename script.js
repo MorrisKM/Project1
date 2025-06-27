@@ -35,7 +35,7 @@ let checkOutDiv = document.getElementById('checkOutDiv')
 let home2 = document.querySelector('.home2');
 let menu = document.querySelectorAll('.menu');
 
-let users = 'http://localhost:3000/people'
+let usersdb = 'http://localhost:3000/people'
 
 // Show login modal and blur menu page on page load, disable pointer events for key UI
 window.addEventListener('DOMContentLoaded', () => {
@@ -66,7 +66,7 @@ signUpForm.addEventListener('submit', async (e) => {
     let formData = new FormData(signUpForm);
     let obj = Object.fromEntries(formData.entries());
 
-    let db = await fetch(users, {
+    let db = await fetch(usersdb, {
         method: 'POST',
         body: JSON.stringify(obj)
     });
@@ -78,7 +78,7 @@ logInForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     let user = Object.fromEntries(new FormData(logInForm).entries());
 
-    let db = await fetch("http://localhost:3000/people");
+    let db = await fetch(usersdb);
     let users = await db.json();
 
     // Find user by username
