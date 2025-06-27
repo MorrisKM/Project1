@@ -132,6 +132,8 @@ learn.addEventListener('click', () => {
 menu.forEach(menu => {
     menu.addEventListener('click', () => {
         locationSec.style.transform = 'translateX(-100%)';
+        landingPage.style.transform = 'translateY(0%) scale(1)';
+        learnMore.style.visibility = 'hidden';
     })
 })
 
