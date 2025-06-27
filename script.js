@@ -1,3 +1,4 @@
+// Selectors for login/signup and main UI elements
 let logInToggle = document.querySelector('#logInToggle')
 let signUpToggle = document.querySelector('.signUpToggle');
 let signInToggle = document.querySelector('.signInToggle');
@@ -34,7 +35,7 @@ let checkOutDiv = document.getElementById('checkOutDiv')
 let home2 = document.querySelector('.home2');
 let menu = document.querySelectorAll('.menu');
 
-//logIn
+// Show login modal and blur menu page on page load, disable pointer events for key UI
 window.addEventListener('DOMContentLoaded', () => {
     MainLogInDiv.style.visibility = 'visible';
     menuPage.style.filter = 'blur(10px)';
@@ -42,11 +43,12 @@ window.addEventListener('DOMContentLoaded', () => {
         loc.style.pointerEvents = 'none'
     })
 })
-
+// Toggle to sign up form
 signUpToggle.addEventListener('click', () => {
     signInToggle.style.transform = 'translateX(0%)';
     signUpDiv.style.transform = 'translateX(0%)';
 })
+// Toggle to sign in form
 signInToggle.addEventListener('click', () => {
     signInToggle.style.transform = 'translateX(100%)';
     signUpDiv.style.transform = 'translateX(100%)';
@@ -54,7 +56,7 @@ signInToggle.addEventListener('click', () => {
 
 let signUpForm = document.getElementById('signUpForm');
 let logInForm = document.getElementById('logInForm');
-
+// Handle sign up form submission
 signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -68,7 +70,7 @@ signUpForm.addEventListener('submit', async (e) => {
     if(!db.ok){alert('user not update')}
     else{alert('user updated')};
 })
-
+// Handle login form submission
 logInForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     let user = Object.fromEntries(new FormData(logInForm).entries());
@@ -76,9 +78,11 @@ logInForm.addEventListener('submit', async (e) => {
     let db = await fetch("http://localhost:3000/people");
     let users = await db.json();
 
+    // Find user by username
     let foundUser = users.find(x => x.userName === user.userName);
 
     if (foundUser) {
+        // Check password
         if(foundUser.password === user.password) {
             MainLogInDiv.style.visibility = 'hidden';
             menuPage.style.filter = 'blur(0)';
@@ -86,6 +90,7 @@ logInForm.addEventListener('submit', async (e) => {
                 loc.style.pointerEvents = 'auto'
             });
 
+            // Show addFoodBtn if user is 'Morris' mimics admin rights
             if(foundUser.userName === 'Morris') {
                 addFoodBtn.style.visibility = 'visible';
             }else{
@@ -99,14 +104,18 @@ logInForm.addEventListener('submit', async (e) => {
     }
 });
 
-
+// Show location section when home2 is clicked
 home2.addEventListener('click', () => {
     locationSec.style.transform = 'translateX(0)'
 })
+
+// Animate landing and slider on mouse wheel
 window.addEventListener('wheel', () => {
     landingPage.style.transform = 'translateY(50%) scale(0.98)';
     slider.style.transform = 'translateY(0%)';
 });
+
+// Show learn more section and animate landing/slider
 learn.addEventListener('click', () => {
     landingPage.style.transform = 'translateY(0%) scale(1)';
     slider.style.transform = 'translateY(-100%)'
@@ -114,13 +123,15 @@ learn.addEventListener('click', () => {
     learnMore.style.visibility = 'visible';
     learnMore.style.transform = 'translateY(-50px)';
 });
+
+// Move location section when menu is clicked
 menu.forEach(menu => {
     menu.addEventListener('click', () => {
         locationSec.style.transform = 'translateX(100%)';
     })
 })
 
-
+// Utility to open modals and blur menu page
 const modalOpen = (invoker, element) => {
     invoker.addEventListener('click', () => {
         [productModal, formDiv, checkOutDiv, cartDiv].forEach(div => {
@@ -136,6 +147,7 @@ modalOpen(addFoodBtn, formDiv);
 modalOpen(checkOutBtn, checkOutDiv);
 modalOpen(menuCheckOut, checkOutDiv)
 
+// Utility to close modals and unblur menu page
 const modalClose = (invoker, element) => {
     invoker.addEventListener('click', () => {
         element.style.visibility = 'hidden'
@@ -148,6 +160,7 @@ modalClose(closeForm, formDiv);
 modalClose(closeCart, cartDiv);
 modalClose(closeCheckOut, checkOutDiv);
 
+// Return to cart from checkout
 returnToCart.addEventListener('click', () => {
     secondPage.scrollIntoView();
     menuPage.style.filter = 'blur(10px)';
@@ -156,6 +169,7 @@ returnToCart.addEventListener('click', () => {
     checkOutDiv.style.visibility = 'hidden';
 })
 
+// Open cart modal and blur menu page
 menuCart.addEventListener('click', () => {
     secondPage.scrollIntoView();
     menuPage.style.filter = 'blur(10px)';
@@ -163,6 +177,7 @@ menuCart.addEventListener('click', () => {
     cartDiv.style.visibility = 'visible';
 })
 
+// Preview image in form when URL is entered
 imageUrlForm.addEventListener('change', (e) => {
     imagePreForm.style.backgroundImage = `url(${e.target.value})`;
     console.log(`url(${e.target.value})`)
@@ -177,7 +192,7 @@ let modalFoodInfo = document.getElementById('modalFoodInfo');
 let modalFoodPrice = document.getElementById('modalFoodPrice');
 let modalCart = document.getElementById('addToCart');
 
-
+// Render menu products from backend
 async function menuP () {
     let db = await fetch('http://localhost:3000/listings');
     let data = await db.json();
@@ -228,6 +243,7 @@ async function menuP () {
         productCart.appendChild(cart);
         cart.setAttribute('src', 'images/bag.svg');
 
+        // Add to cart handler
         productCart.addEventListener('click', async () => {
         let carted = {cart : true};
         let updated =await fetch(`http://localhost:3000/listings/${x.id}`,{
@@ -241,6 +257,7 @@ async function menuP () {
         console.log(`${x.foodNotes}`)
         let currentProduct = null; // Will hold the currently displayed product
 
+        // Add to cart from modal
         modalCart.addEventListener('click', async () => {
             if (!currentProduct) return;
             let carted = { cart: true };
@@ -253,6 +270,7 @@ async function menuP () {
             alert('Product added to cart');
         });
 
+        // Show product modal with details on image click
         productPic.addEventListener('click', () => {
             productModal.style.visibility = 'visible';
             menuPage.style.filter = 'blur(10px)';
@@ -271,7 +289,7 @@ async function menuP () {
 }
 menuP();
 
-//fetch listing from the form 
+// Handle form submission for adding new food listing
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -303,6 +321,7 @@ let ridePrice = document.querySelector('.ridePrice');
 let checkPrice = document.querySelector('.checkPrice')
 let totalCheckPrice = document.querySelector('.totalCheckPrice')
 
+// Update cart total and handle shipping selection
 function updateCartTotal() {
     let total = 0;
     document.querySelectorAll('.cartProductPrice span').forEach(span => {
@@ -315,6 +334,7 @@ function updateCartTotal() {
     });
 }
 
+// Render cart items
 async function cartRender () {
     let db = await fetch('http://localhost:3000/listings');
     let data = await db.json();
@@ -325,6 +345,7 @@ async function cartRender () {
     for(let i = 0; i< carted.length; i++){
         let x = carted[i]
 
+        // Get saved quantity from localStorage or default to 1
         let savedQuantity = localStorage.getItem(`quantity_${x.id}`);
         let quantity = savedQuantity ? parseInt(savedQuantity, 10) : 1;
 
@@ -365,6 +386,8 @@ async function cartRender () {
             updateCartTotal();
             renderCheckOut(carted);
         })
+
+        // Quantity display
         let cartProductQuantity = document.createElement('button');
         cartProductQuantity.textContent = quantity;
         let cartProductPlus = document.createElement('p');
@@ -395,6 +418,7 @@ async function cartRender () {
         cartProductPrice.appendChild(cartPriceOutput);
         cartPriceOutput.appendChild(priceOutputValue);
 
+        // Remove item from cart
         let cartDeleter = document.createElement('div');
         let cartDeleterP = document.createElement('p')
         cartDeleter.appendChild(cartDeleterP)
@@ -412,7 +436,10 @@ async function cartRender () {
         })
     }
 
+     // Update cart item count
     cartItems.textContent = `${carted.length}`;
+    
+    // Render checkout list
     function renderCheckOut(carted) {
         checkOutList.innerHTML = '';
         let total = 0;
