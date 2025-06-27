@@ -237,8 +237,12 @@ p{
 #productModal{
     position: absolute;
     display: flex;
-    width: 950px;
-    height: 600px;
+    min-height: 450px;
+    height: 60%;
+    max-height: 650px;
+    max-width: 950px;
+    width: 65%;
+    min-width: 700px;
     background-color: antiquewhite;
     z-index: 11;
     flex-direction: row;
