@@ -42,6 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
     [menuCart,menuCheckOut,addFoodBtn,menuPage].forEach(loc => {
         loc.style.pointerEvents = 'none'
     })
+    locationSec.style.transform = 'translateX(0)'
 })
 // Toggle to sign up form
 signUpToggle.addEventListener('click', () => {
@@ -127,7 +128,7 @@ learn.addEventListener('click', () => {
 // Move location section when menu is clicked
 menu.forEach(menu => {
     menu.addEventListener('click', () => {
-        locationSec.style.transform = 'translateX(100%)';
+        locationSec.style.transform = 'translateX(-100%)';
     })
 })
 
@@ -438,7 +439,7 @@ async function cartRender () {
 
      // Update cart item count
     cartItems.textContent = `${carted.length}`;
-    
+
     // Render checkout list
     function renderCheckOut(carted) {
         checkOutList.innerHTML = '';

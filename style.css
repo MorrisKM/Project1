@@ -53,6 +53,7 @@ header div ul li a:hover{
     overflow: hidden;
     transform: translateX(-100%);
     z-index: 13;
+    transition: transform .50s ease;
 }
 #slider{
     align-self: flex-start;
