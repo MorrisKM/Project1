@@ -35,8 +35,8 @@ let checkOutDiv = document.getElementById('checkOutDiv')
 let home2 = document.querySelector('.home2');
 let menu = document.querySelectorAll('.menu');
 
-let usersdb = 'http://localhost:3000/people';
-let listingsbd = 'http://localhost:3000/listings';
+let usersdb = 'https://project1db-1.onrender.com/people';
+let listingsbd = 'https://project1db-1.onrender.com/listings';
 
 // Show login modal and blur menu page on page load, disable pointer events for key UI
 window.addEventListener('DOMContentLoaded', () => {

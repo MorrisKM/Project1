@@ -31,7 +31,7 @@
       "cart": true
     }
   ],
-  "people" : [
+  "people": [
     {
       "id": "5cf7",
       "userName": "Morris",
@@ -45,6 +45,13 @@
       "phoneNumber": "0796220971",
       "email": "morrismunene@gmail.com",
       "password": "munene"
+    },
+    {
+      "id": "880c",
+      "userName": "Kaynan",
+      "phoneNumber": "0723768083",
+      "email": "caeserkaynan@gmail.com",
+      "password": "kay123"
     }
   ]
 }
