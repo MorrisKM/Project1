@@ -439,6 +439,7 @@ async function cartRender () {
                 method: 'PATCH',
                 body: JSON.stringify({cart : false})
             })
+            updateCartTotal()
         })
     }
 
