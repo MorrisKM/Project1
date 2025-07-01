@@ -90,6 +90,8 @@ logInForm.addEventListener('submit', async (e) => {
         if(foundUser.password === user.password) {
             MainLogInDiv.style.visibility = 'hidden';
             menuPage.style.filter = 'blur(0)';
+            landingPage.style.transform = 'translateY(50%) scale(0.98)';
+            slider.style.transform = 'translateY(0%)';
             [menuCart,menuCheckOut,addFoodBtn,menuPage].forEach(loc => {
                 loc.style.pointerEvents = 'auto'
             });
